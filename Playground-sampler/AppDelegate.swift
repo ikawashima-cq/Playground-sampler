@@ -18,8 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow(frame: UIScreen.main.bounds)
 
-        let vc = SplashViewController()
-        window?.rootViewController = vc
+        let st = UIStoryboard(name: "SplashViewController", bundle: nil)
+        let vc = st.instantiateViewController(withIdentifier: "SplashViewController")
+        let nc = UINavigationController(rootViewController: vc)
+        window?.rootViewController = nc
         window?.makeKeyAndVisible()
         return true
     }
